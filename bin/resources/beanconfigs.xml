@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+    xmlns:context="http://www.springframework.org/schema/context"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context.xsd">
+    
+   
+    <bean id="e1" name="engine" class="com.itp.model.Engine" scope="prototype">
+    	<constructor-arg value="2500"></constructor-arg>
+    	<constructor-arg value="25"></constructor-arg>
+    	<constructor-arg value="Honda"></constructor-arg>
+    	<constructor-arg value="Petrol"></constructor-arg>
+    </bean>
+    
+    <bean id="e2" class="com.itp.model.Engine">
+     <property name="engineCC">
+     	<value>3500</value>
+     </property>
+     
+     <property name="engineType">
+     	<value>Diesel</value>
+     </property>
+     
+     <property name="engineLiter">
+     	<value>35</value>
+     </property>
+     
+     <property name="engineMfg">
+     	<value>Toyota</value>
+     </property>
+     </bean>
+     
+     
+      <bean id="gear" class="com.itp.model.Gear">
+    	<constructor-arg value="6"></constructor-arg>
+    	<constructor-arg value="Automatic"></constructor-arg>
+    	<constructor-arg value="Honda"></constructor-arg>
+      </bean>
+    
+	
+    <bean id="g2" class="com.itp.model.Gear">
+    	<property name="gearLever">
+    		<value>8</value>
+    	</property>
+    	
+    	<property name="gearType">
+    		<value>Manual</value>
+    	</property>
+    	
+    	<property name="gearMfg">
+    		<value>Tata</value>
+    	</property>
+    </bean>
+   
+     <bean id="c1" class="com.itp.model.Car" autowire="byName">
+    	<constructor-arg value="City"></constructor-arg>
+    	<constructor-arg value="Honda"></constructor-arg>
+    	<constructor-arg value="White"></constructor-arg>
+    	<constructor-arg value="1000.0"></constructor-arg>
+    	<!-- <constructor-arg ref="e1"></constructor-arg>
+    	<constructor-arg ref="g1"></constructor-arg> -->
+    </bean> 
+
+     <bean id="c2" class="com.itp.model.Car">
+    		<property name="carModel">
+    		<value>Innova</value>
+    		</property>
+    		
+    		<property name="carMfg">
+    		<value>Toyota</value>
+    		</property>
+    		
+    		<property name="carColor">
+    		<value>Black</value>
+    		</property>
+    		
+    		<property name="carPrice">
+    		<value>1500.0</value>
+    		</property>
+    		
+    		<property name="engine" ref="e2"></property>
+    		
+    		<property name="gear" ref="g2"></property>
+    </bean>
+</beans>
