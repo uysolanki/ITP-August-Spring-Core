@@ -7,6 +7,7 @@
     http://www.springframework.org/schema/context
     http://www.springframework.org/schema/context/spring-context.xsd">
     
+   <context:annotation-config />
    
     <bean id="e1" name="engine" class="com.itp.model.Engine" scope="prototype">
     	<constructor-arg value="2500"></constructor-arg>
@@ -84,5 +85,10 @@
     		<property name="engine" ref="e2"></property>
     		
     		<property name="gear" ref="g2"></property>
+    </bean>
+    
+    <bean id="p1" name="player1" class="com.itp.model.Player"><!--  init-method="morning" destroy-method="night"> -->
+    	<constructor-arg value="18"></constructor-arg>
+    	<constructor-arg value="Virat"></constructor-arg>
     </bean>
 </beans>
