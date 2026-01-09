@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<!-- <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
     xmlns:context="http://www.springframework.org/schema/context"
@@ -61,8 +61,8 @@
     	<constructor-arg value="Honda"></constructor-arg>
     	<constructor-arg value="White"></constructor-arg>
     	<constructor-arg value="1000.0"></constructor-arg>
-    	<!-- <constructor-arg ref="e1"></constructor-arg>
-    	<constructor-arg ref="g1"></constructor-arg> -->
+    	<constructor-arg ref="e1"></constructor-arg>
+    	<constructor-arg ref="g1"></constructor-arg>
     </bean> 
 
      <bean id="c2" class="com.itp.model.Car">
@@ -87,8 +87,9 @@
     		<property name="gear" ref="g2"></property>
     </bean>
     
-    <bean id="p1" name="player1" class="com.itp.model.Player"><!--  init-method="morning" destroy-method="night"> -->
+    <bean id="p1" name="player1" class="com.itp.model.Player"> init-method="morning" destroy-method="night">
     	<constructor-arg value="18"></constructor-arg>
     	<constructor-arg value="Virat"></constructor-arg>
     </bean>
 </beans>
+ -->

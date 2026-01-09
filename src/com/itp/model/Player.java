@@ -3,10 +3,13 @@ package com.itp.model;
 import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class Player //implements InitializingBean,DisposableBean
 {
-		private int jno;
-		private String pname;
+		private int jno;		//jno=0
+		private String pname;   //pname=null
 		
 		public Player() {}
 		public Player(int jno, String pname) {
